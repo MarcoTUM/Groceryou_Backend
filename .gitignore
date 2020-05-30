@@ -1,4 +1,4 @@
-# Gitignore Tutorial: https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/
+# Gitignore Tutorial: https://www.pluralsight.com/guides/how-to-use-gitignore-file
 
 # dependencies
 /node_modules
