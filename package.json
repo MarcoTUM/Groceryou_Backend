@@ -1,0 +1,22 @@
+{
+  "name": "groceryou_backend",
+  "version": "1.0.0",
+  "description": "Private to private grocery delivery service.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoTUM/Groceryou_backend.git"
+  },
+  "keywords": [
+    "NodeJS"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcoTUM/Groceryou_backend/issues"
+  },
+  "homepage": "https://github.com/MarcoTUM/Groceryou_backend#readme"
+}
