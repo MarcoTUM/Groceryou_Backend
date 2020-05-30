@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/MarcoTUM/Groceryou_backend/issues"
   },
-  "homepage": "https://github.com/MarcoTUM/Groceryou_backend#readme"
+  "homepage": "https://github.com/MarcoTUM/Groceryou_backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
