@@ -12,10 +12,11 @@ Stop Server:
 ### `Ctrl + C`
 
 To change database url, go to `db.js` and edit:
-`const dbConnectionUrl`
+~~~~
+const dbConnectionUrl
+~~~~
 
 To change database and collection name, go to `server.ja` and edit:
-
 ~~~~
 const dbName 
 const collectionName
