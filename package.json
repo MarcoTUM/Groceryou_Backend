@@ -23,7 +23,8 @@
   "homepage": "https://github.com/MarcoTUM/Groceryou_backend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.5.8"
+    "mongodb": "^3.5.8",
+    "mongoose": "^5.9.17"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
