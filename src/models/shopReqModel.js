@@ -1,3 +1,5 @@
+"use strict";
+
 const mongoose = require('mongoose')
 
 const shoppingRequestSchema = new mongoose.Schema({

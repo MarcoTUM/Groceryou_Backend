@@ -16,4 +16,4 @@ To change database url, go to `server.js` and edit:
 const connectionString
 ~~~~
 
-Currently only a dummy model available: models/shoppingRequest.js
+Currently only a dummy model available: models/shopReqModel.js

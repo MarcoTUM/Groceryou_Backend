@@ -1,57 +1,30 @@
-const express = require("express");
-const server = express();
-const mongoose = require('mongoose')
+"use strict";
 
-const connectionString = 'mongodb+srv://user1:user1Pass@cluster0-21g8j.mongodb.net/test?retryWrites=true&w=majority';
+const http = require('http');
+const mongoose = require('mongoose');
 
-const body_parser = require("body-parser");
+const api = require('./src/api');
+const config = require('./src/config');
 
-// parse JSON (application/json content-type)
-server.use(body_parser.json());
+api.set('port', config.port)
 
-const port = 8080;
+const server = http.createServer(api);
 
-mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true});
+console.log(config.mongoString)
 
-var db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', async () => {
-    var shopReqModel = require('./models/shoppingRequest');
-
-    //optional code puts a new order request in DB and gets all requests
-
-    //
-    // console.log(Date.now())
-    //
-    // dummy = new shopReqModel({
-    //     name: 'test',
-    //     time: Date.now()
-    // });
-    //
-    // console.log("dummy:");
-    // console.log(dummy.time);
-    //
-    // await dummy.save();
-    //
-    // var query = shopReqModel.find();
-    // var promise = await query.exec();
-    // console.log(promise);
-
-    server.listen(port, () => {
-        console.log(`Server listening at ${port}`);
+mongoose
+    .connect(config.mongoString, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => server.listen(config.port))
+    .catch(err => {
+        console.log('Error connectiong to the DB', err.message);
+        process.exit(err.statusCode);
     });
 
-    server.get('/',async (req,res) => {
-        console.log('hello get!');
-        var query = shopReqModel.find();
-        var promise = await query.exec();
-        console.log(promise);
-        res.json(promise);
-    });
-
+server.on('listening', () => {
+    console.log('API is running in port ' +config.port);
 });
 
-
-
-
+server.on('error', (err) => {
+    console.log('Error in the server', err.message);
+    process.exit(err.statusCode);
+});
