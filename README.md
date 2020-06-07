@@ -11,13 +11,9 @@ Browser: [http://localhost:8080](http://localhost:8080)
 Stop Server: 
 ### `Ctrl + C`
 
-To change database url, go to `db.js` and edit:
+To change database url, go to `server.js` and edit:
 ~~~~
-const dbConnectionUrl
+const connectionString
 ~~~~
 
-To change database and collection name, go to `server.ja` and edit:
-~~~~
-const dbName 
-const collectionName
-~~~~
+Currently only a dummy model available: models/shoppingRequest.js
