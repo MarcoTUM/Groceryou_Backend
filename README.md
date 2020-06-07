@@ -11,9 +11,11 @@ Browser: [http://localhost:8080](http://localhost:8080)
 Stop Server: 
 ### `Ctrl + C`
 
-To change database url, go to `server.js` and edit:
+To change database url, go to `src/config.js` and edit:
 ~~~~
-const connectionString
+let mongoString
 ~~~~
 
 Currently only a dummy model available: models/shopReqModel.js
+
+Use postman to check out implemented CRUD operations, will also persist on the mongoDB atlas.
