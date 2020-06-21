@@ -8,6 +8,7 @@ const middlewares = require('./middlewares');
 
 const auth = require('./routes/auth');
 const shopReq = require('./routes/shopReq');
+const customerRequest = require('./routes/customerRequestRoutes');
 
 const api = express();
 
@@ -25,7 +26,8 @@ api.get('/', (req,res) => {
 });
 
 //API routes
-api.use('/auth', auth)
+api.use('/auth', auth);
 api.use('/shopReq', shopReq);
+api.use('/customerRequest', customerRequest);
 
 module.exports = api;
