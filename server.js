@@ -16,7 +16,7 @@ mongoose
     .connect(config.mongoString, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => server.listen(config.port))
     .catch(err => {
-        console.log('Error connectiong to the DB', err.message);
+        console.log('Error connecting to the DB', err.message);
         process.exit(err.statusCode);
     });
 
