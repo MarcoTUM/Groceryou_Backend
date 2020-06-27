@@ -3,6 +3,7 @@ const shops =  [
         id: "store_id_01",
         name: "Test Store",
         adress: "Test Adress",
+        minimumPrice: 20,
         products: [{
             id: "item_id_01",
             name: 'Bio Speisekartoffeln festkochend 1,5kg',
@@ -33,12 +34,32 @@ const shops =  [
             brand: ' Nike',
             rating: 2,
             numReviews: 7
+        },{
+            id: "item_id_04",
+            name: 'Bio Tomato 1,5kg',
+            section: 'vegetable',
+            category: 'tomato',
+            image: './images/tomato.png',
+            price: 2.5,
+            brand: 'Bio',
+            rating: 2,
+            numReviews: 7
+        },{
+            id: "item_id_05",
+            name: 'Land Tomato 1,5kg',
+            section: 'vegetable',
+            category: 'tomato',
+            image: './images/tomato.png',
+            price: 2.5,
+            brand: 'Land',
+            rating: 2,
+            numReviews: 7
         }]
-    },
-    {
-        id: "store_id_02",
-        name: "Test Store2",
-        adress: "Test Adress2",
+    },{
+        id: "store_id_01",
+        name: "Test Store",
+        adress: "Test Adress",
+        minimumPrice: 20,
         products: [{
             id: "item_id_01",
             name: 'Bio Speisekartoffeln festkochend 1,5kg',
@@ -67,11 +88,30 @@ const shops =  [
             image: './images/potato.png',
             price: 2.5,
             brand: ' Nike',
+            rating: 2,
+            numReviews: 7
+        },{
+            id: "item_id_04",
+            name: 'Bio Tomato 1,5kg',
+            section: 'vegetable',
+            category: 'tomato',
+            image: './images/tomato.png',
+            price: 2.5,
+            brand: 'Bio',
+            rating: 2,
+            numReviews: 7
+        },{
+            id: "item_id_05",
+            name: 'Land Tomato 1,5kg',
+            section: 'vegetable',
+            category: 'tomato',
+            image: './images/tomato.png',
+            price: 2.5,
+            brand: 'Land',
             rating: 2,
             numReviews: 7
         }]
     }
-        
 ]
 
 module.exports ={
