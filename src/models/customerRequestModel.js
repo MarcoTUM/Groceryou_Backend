@@ -13,8 +13,8 @@ const customerRequestSchema = new mongoose.Schema({
     city: String,
     commission: Number,
     amountOfItems: Number,
-    //desiredDeliveryTimeStart: Date,
-    //desiredDeliveryTimeEnd: Date
+    desiredDeliveryTimeStart: Date,
+    desiredDeliveryTimeEnd: Date
 });
 
 module.exports = mongoose.model('customerRequestModel',customerRequestSchema);
