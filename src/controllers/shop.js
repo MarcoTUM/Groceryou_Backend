@@ -25,7 +25,6 @@ const create = async (req, res) => {
 
 const read = async (req, res) => {
     try {
-        console.log("calling read with " + req.params);
         let shop = await shopModel.findById(req.params.id).exec();
 
         if (!shop) return res.status(404).json({
@@ -79,7 +78,6 @@ const remove = async (req, res) => {
 };
 
 const list = async (req, res) => {
-    console.log("calling list");
     try {
         let shops = await shopModel.find({}).exec();
 
