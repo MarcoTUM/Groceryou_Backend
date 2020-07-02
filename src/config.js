@@ -8,6 +8,8 @@ const JwtSecret = process.env.JWT_SECRET;
 const mongoUser = process.env.MDB_USR;
 const mongoPwd = process.env.MDB_PWD;
 const tokenExpTime = 86400; //this is in seconds, corresponds to 24 hours
+const twiliowAccountSid = process.env.TWILIO_ACCOUNT_SID;
+const twiliowAuthToken = process.env.TWILIO_AUTH_TOKEN;
 
 let mongoString = 'mongodb+srv://';
 mongoString += mongoUser + ':' + mongoPwd;
@@ -20,5 +22,7 @@ module.exports = {
     port,
     JwtSecret,
     mongoString,
-    tokenExpTime
+    tokenExpTime,
+    twiliowAccountSid,
+    twilowAuthToken: twiliowAuthToken
 }
