@@ -6,7 +6,6 @@ const customerRequestSchema = new mongoose.Schema({
     customerID: mongoose.Types.ObjectId,
     courierID: mongoose.Types.ObjectId,
     commission: Number,
-    amountOfItems: Number,
     desiredDeliveryTimeStart: Date,
     desiredDeliveryTimeEnd: Date,
     itemList: Array
