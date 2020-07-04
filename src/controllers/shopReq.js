@@ -77,9 +77,9 @@ const remove = async (req, res) => {
 
 const list = async(req,res) => {
     try{
-        let shopReqs = await shopReqModel.find({}).exec();
+        let shopRequests = await shopReqModel.find({}).exec();
 
-        return res.status(200).json(shopReqs);
+        return res.status(200).json(shopRequests);
     } catch(err){
         return res.status(500).json({
             error: 'Internal server error',

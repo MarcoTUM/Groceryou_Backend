@@ -1,6 +1,6 @@
 "use strict";
 
-const customerModel = require('../models/customerModel');
+const requestModel = require('../models/requestModel');
 
 
 const create = async (req, res) => {
@@ -11,7 +11,7 @@ const create = async (req, res) => {
         });
 
     try {
-        let shopReq = await customerModel.create(req.body);
+        let shopReq = await requestModel.create(req.body);
 
         return res.status(201).json(shopReq)
     } catch (err) {
@@ -24,7 +24,7 @@ const create = async (req, res) => {
 
 const read = async (req, res) => {
     try {
-        let shopReq = await customerModel.findById(req.params.id).exec();
+        let shopReq = await requestModel.findById(req.params.id).exec();
 
         if (!shopReq) return res.status(404).json({
             error: 'Not Found',
@@ -49,7 +49,7 @@ const update = async (req, res) => {
     }
 
     try {
-        let shopReq = await customerModel.findByIdAndUpdate(req.params.id, req.body, {
+        let shopReq = await requestModel.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
         }).exec();
@@ -65,7 +65,7 @@ const update = async (req, res) => {
 
 const remove = async (req, res) => {
     try {
-        await customerModel.findByIdAndRemove(req.params.id).exec();
+        await requestModel.findByIdAndRemove(req.params.id).exec();
 
         return res.status(200).json({ message: "Shopping request w/ id " + res.params.id + " was deleted" });
     } catch (err) {
@@ -78,9 +78,9 @@ const remove = async (req, res) => {
 
 const list = async (req, res) => {
     try {
-        let customerRequest = await customerModel.find({}).exec();
+        let shopRequests = await requestModel.find({}).exec();
 
-        return res.status(200).json(customerRequest);
+        return res.status(200).json(shopRequests);
     } catch (err) {
         return res.status(500).json({
             error: 'Internal server error',
