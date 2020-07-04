@@ -1,20 +1,14 @@
 "use strict";
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const customerRequestSchema = new mongoose.Schema({
-    customerID: Number,
-    courierID: Number,
-    name: String,
-    surname: String,
-    gender: String,
-    street: String,
-    PLZ: Number,
-    city: String,
+    customerID: mongoose.Types.ObjectId,
+    courierID: mongoose.Types.ObjectId,
     commission: Number,
-    amountOfItems: Number,
     desiredDeliveryTimeStart: Date,
-    desiredDeliveryTimeEnd: Date
+    desiredDeliveryTimeEnd: Date,
+    itemList: Array
 });
 
 module.exports = mongoose.model('customerRequestModel',customerRequestSchema);
