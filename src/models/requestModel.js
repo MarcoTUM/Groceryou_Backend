@@ -2,8 +2,8 @@
 
 const mongoose = require('mongoose');
 
-const customerRequestSchema = new mongoose.Schema({
-    customerID: mongoose.Types.ObjectId,
+const requestSchema = new mongoose.Schema({
+    userID: mongoose.Types.ObjectId,
     courierID: mongoose.Types.ObjectId,
     commission: Number,
     desiredDeliveryTimeStart: Date,
@@ -11,4 +11,4 @@ const customerRequestSchema = new mongoose.Schema({
     itemList: Array
 });
 
-module.exports = mongoose.model('customerRequestModel',customerRequestSchema);
+module.exports = mongoose.model('requests', requestSchema);

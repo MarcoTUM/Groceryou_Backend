@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const config = require('../config');
-const UserModel = require('../models/user');//implement this
+const UserModel = require('../models/userModel');
 
 const tokenExpTime = config.tokenExpTime;
 
