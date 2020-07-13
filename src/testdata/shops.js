@@ -57,8 +57,8 @@ const shops =  [
         }]
     },{
         id: "store_id_01",
-        name: "Test Store",
-        adress: "Test Adress",
+        name: "Test Store2",
+        adress: "Test Adress2",
         minimumPrice: 20,
         products: [{
             id: "item_id_01",

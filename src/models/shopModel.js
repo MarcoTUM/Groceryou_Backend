@@ -6,7 +6,7 @@ const { Double } = require('mongodb');
 const shopSchema = new mongoose.Schema({
     name: String,
     icon: String,
-    address: String,
+    address: Object,
     minimumPrice: Number,
     products: Array
 });
