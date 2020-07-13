@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const config = require('../config');
-const UserModel = require('../models/user');//implement this
+const UserModel = require('../models/userModel');
 
 const tokenExpTime = config.tokenExpTime;
 
@@ -96,9 +96,22 @@ const logout = (req,res) => {
     res.status(200).send({token: null});
 };
 
+const amICourier = async (req,res) => {
+    try{
+        let user = await UserModel.findById(req.body.id).exec();
+        return res.status(200).json({isCourier: user.isCourier});
+    } catch(err) {
+        return res.status(404).json({
+            error: 'User Not Found',
+            message: err.message
+        });
+    }
+};
+
 module.exports = {
     login,
     register,
     logout,
-    me
+    me,
+    amICourier,
 };
