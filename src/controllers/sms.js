@@ -2,6 +2,7 @@
 
 const accountSid = require('../config').twiliowAccountSid;
 const authToken = require('../config').twilowAuthToken;
+const twilioTargetNr = require('../config').twiliowTargetNr
 
 const client = require('twilio')(accountSid, authToken);
 
@@ -20,7 +21,8 @@ const send = async(req,res) => {
     client.messages.create({
         body: req.body.body,
         from: '+12017343131',
-        to: req.body.number,
+        // to: req.body.number, <- what should actually happen
+        to: twilioTargetNr
     }).then(
         (message) => {
             console.log(message.sid);
@@ -33,4 +35,4 @@ const send = async(req,res) => {
 
 module.exports = {
     send
-}
+};
