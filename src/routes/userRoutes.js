@@ -3,16 +3,13 @@
 const express = require('express');
 const router = express.Router();
 
-// const middlewares = require ('../middlewares');
+const middlewares = require ('../middlewares');
 const userController = require('../controllers/userController');
 
-router.get('/', userController.list);// List all shopping requests
-// router.post('/', middlewares.checkAuthentication, shopReqController.create())
-router.post('/', userController.create);
+router.get('/', userController.list);
+router.post('/', middlewares.checkAuthentication, userController.create);
 router.get('/:id', userController.read);
-// router.put('/:id', middlewares.checkAuthentication, shopReqController.update);
-router.put('/:id', userController.update);
-// router.delete('/:id', middlewares.checkAuthentication, shopReqController.remove);
-router.delete('/:id', userController.remove);
+router.put('/:id', middlewares.checkAuthentication, userController.update);
+router.delete('/:id', middlewares.checkAuthentication, userController.remove);
 
 module.exports = router;
