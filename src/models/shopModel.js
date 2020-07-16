@@ -1,7 +1,6 @@
 "use strict";
 
 const mongoose = require('mongoose');
-const { Double } = require('mongodb');
 
 const shopSchema = new mongoose.Schema({
     name: String,

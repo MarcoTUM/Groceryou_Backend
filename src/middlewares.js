@@ -24,6 +24,8 @@ const checkAuthentication = (req, res, next) => {
     // check header or url parameters or post parameters for token
     let token = "";
     if(req.headers.authorization){
+        concole.log("############");
+        console.log(req.headers.authorization);
         token = req.headers.authorization.substring(4);
     }
 
