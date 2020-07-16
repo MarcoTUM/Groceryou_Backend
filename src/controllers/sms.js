@@ -26,7 +26,7 @@ const send = async(req,res) => {
     }).then(
         (message) => {
             console.log(message.sid);
-            res.status(200).send("ok");
+            res.status(200);
     }).catch((e) => {
         console.log(e);
     });
