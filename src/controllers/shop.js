@@ -1,5 +1,4 @@
 "use strict";
-const shops = require('../testdata/shops'); 
 
 const shopModel = require('../models/shopModel');
 
