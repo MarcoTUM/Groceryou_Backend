@@ -25,7 +25,6 @@ const send = async(req,res) => {
         to: twilioTargetNr
     }).then(
         (message) => {
-            console.log(message.sid);
             res.status(200);
     }).catch((e) => {
         console.log(e);
