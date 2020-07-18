@@ -89,10 +89,25 @@ const list = async (req, res) => {
     }
 };
 
+const listByUserId = async (req, res) => {
+    try {
+        //let shopRequests = await requestModel.find({}).exec();
+        let shopRequests = await requestModel.find({userID: req.params.id})
+
+        return res.status(200).json(shopRequests);
+    } catch (err) {
+        return res.status(500).json({
+            error: 'Internal server error',
+            message: err.message
+        });
+    }
+};
+
 module.exports = {
     create,
     read,
     update,
     remove,
-    list
+    list,
+    listByUserId
 };

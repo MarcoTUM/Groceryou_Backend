@@ -1,10 +1,12 @@
 "use strict";
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const shopSchema = new mongoose.Schema({
     name: String,
-    adress: String,
+    icon: String,
+    address: Object,
+    minimumPrice: Number,
     products: Array
 });
 
