@@ -12,9 +12,7 @@ router.get('/:id', customerRequestController.read);
 
 router.get('/userId/:id', customerRequestController.listByUserId);
 
-// router.put('/:id', middlewares.checkAuthentication, shopReqController.update);
 router.put('/:id', customerRequestController.update);
-// router.delete('/:id', middlewares.checkAuthentication, shopReqController.remove);
 router.delete('/:id', customerRequestController.remove);
 router.put('/:id', middlewares.checkAuthentication, customerRequestController.update);
 router.delete('/:id', middlewares.checkAuthentication, customerRequestController.remove);
