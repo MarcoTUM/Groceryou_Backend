@@ -89,16 +89,10 @@ const list = async (req, res) => {
     }
 };
 
-const listTestData = async(req, res)=>{
-    // for test purpose, read from ../testdata instead of DB <w
-    res.status(200).json(shops);
-}
-
 module.exports ={
     create,
     read,
     update,
     remove,
-    list,
-    listTestData
+    list
 }

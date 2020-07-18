@@ -10,6 +10,9 @@ router.get('/', customerRequestController.list);// List all shopping requests
 // router.post('/', middlewares.checkAuthentication, shopReqController.create())
 router.post('/', customerRequestController.create);
 router.get('/:id', customerRequestController.read);
+
+router.get('/userId/:id', customerRequestController.listByUserId);
+
 // router.put('/:id', middlewares.checkAuthentication, shopReqController.update);
 router.put('/:id', customerRequestController.update);
 // router.delete('/:id', middlewares.checkAuthentication, shopReqController.remove);
