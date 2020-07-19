@@ -4,12 +4,13 @@ const express = require('express');
 const router = express.Router();
 
 const middlewares = require('../middlewares');
-// const AuthController = require('../controllers/auth'); //for login, will implement later
+const AuthController = require('../controllers/auth');
 
 
-// router.post('/login', AuthController.login); //see above
-// router.post('/register', AuthController.register); //see above
-// router.get('/me', middlewares.checkAuthentication(), AuthController.me);
-// router.get('/logout', middlewares.checkAuthentication(), AuthController.logout)
+router.post('/login', AuthController.login); //see above
+router.post('/register', AuthController.register); //see above
+router.get('/me', middlewares.checkAuthentication, AuthController.me);
+router.get('/logout', middlewares.checkAuthentication, AuthController.logout);
+router.post('/amICourier', middlewares.checkAuthentication, AuthController.amICourier);
 
 module.exports = router;

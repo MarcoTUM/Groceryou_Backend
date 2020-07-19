@@ -12,7 +12,7 @@ const allowCrossDomain = (req, res, next) => {
 
     // intercept OPTIONS method
     if(req.method == 'OPTIONS'){
-        res.status(200).send(200);
+        res.status(200).sendStatus(200);
     }
     else{
         next();
@@ -33,7 +33,7 @@ const checkAuthentication = (req, res, next) => {
             message: 'No token provided in the request'
         });
 
-    //verifies secret and checks ?exp?
+    //verifies secret and checks expiration
     jwt.verify(token, config.JwtSecret, (err,decoded) =>{
         if(err) return res.status(401).send({
             error: 'Unauthorized',
