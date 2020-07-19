@@ -15,5 +15,3 @@ To change database url, go to `src/config.js` and edit:
 ~~~~
 let mongoString
 ~~~~
-
-Use Postman (or Insomnia) to check out implemented CRUD operations, will also persist on the mongoDB atlas.
